@@ -1,5 +1,5 @@
 library(xgboost)
-
+packageVersion("xgboost")
 setwd("C:/Users/User/Desktop/Andy/20170107")
 load("LTEextreaction.rdata.RData")
 remains<-names(which(table(x$label)>=50))
@@ -47,7 +47,7 @@ bst <- xgb.train(   params              = param,
                     watchlist           = watchlist
 )
 
-xgb.DMatrix.save(dtrain, 'xgb.DMatrix.data')s
+xgb.DMatrix.save(dtrain, 'xgb.DMatrix.data')
 xgb.save(bst, 'xgb.model')
 
 
